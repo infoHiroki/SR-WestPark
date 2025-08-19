@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウエストパーク社労士事務所 | 福岡のDX特化労務サポート</title>
+    <meta name="description" content="福岡市中央区の社労士事務所。DX推進・助成金申請・労務管理を専門とし、企業のデジタル化と人材活用を総合サポート。">
+    <meta name="keywords" content="社労士,福岡,DX,助成金,労務管理,西公園,デジタルトランスフォーメーション">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', 'Yu Gothic', '游ゴシック', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: white;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: white;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #d97706;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+        
+        section:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin: 2rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #374151;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #1e3a8a;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #374151;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+        
+        /* Office Info */
+        .office-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* List Styles */
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Phone Link */
+        .phone-link {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .phone-link:hover {
+            color: #3b82f6;
+        }
+        
+        /* Section Spacing */
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">ウエストパーク社労士事務所</div>
+            <ul class="nav-links">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">事務所について</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#pricing">料金案内</a></li>
+                <li><a href="#subsidies">助成金</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>DX×労務で福岡の企業を支える</h1>
+            <p>デジタルトランスフォーメーションと労務管理の専門性で<br>持続可能な企業経営をサポート</p>
+            <a href="#contact" class="cta-button">無料相談はこちら</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2><i class="fas fa-user-tie"></i> 代表挨拶・事務所概要</h2>
+            <div class="section-content">
+                <p>福岡市中央区西公園にて「ウエストパーク社労士事務所」を代表しております、特定社会保険労務士の野口 聡です。銀行員として企業の資金運用を支えた経験とファイナンシャルプランナーの専門知識を活かし、他の社労士事務所にはない独自の視点とサービスで皆さまの企業運営をサポートしております。</p>
+                
+                <p>私たちの強みは、単なる労務管理や助成金申請だけにとどまらず、各業界の事情に深く特化した業務特化型DX支援ができることです。これにより、企業様の業務効率化や制度運用の最適化をデジタル技術で実現し、人的資源を最大限に活用した未来型の経営基盤づくりをお手伝いしています。</p>
+                
+                <p>また、若い世代からシニア層まで、性別や背景を問わず多様な働き手が共に働く環境づくりにも特にこだわっています。多様性を尊重した労務サポートを通じて、どのような環境にも柔軟にフィットし、全ての従業員が安心して能力を発揮できる職場づくりを推進しています。</p>
+                
+                <div class="highlight-box">
+                    <p>「社労士にしかできないこと」と「DX×ファイナンシャルプランニングの融合」により、福岡の地域経済と働く人々の未来に貢献することが私たちの使命です。どうぞ安心してお任せください。</p>
+                </div>
+                
+                <div class="office-info">
+                    <h3>事務所概要</h3>
+                    <p><strong>事務所名</strong>：ウエストパーク社会保険労務士事務所</p>
+                    <p><strong>代表</strong>：野口 聡（特定社会保険労務士／ファイナンシャルプランナー）</p>
+                    <p><strong>所在地</strong>：〒810-0061 福岡市中央区西公園4-46-304</p>
+                    <p><strong>受付時間</strong>：平日 9:00〜17:00</p>
+                    <p><strong>お問い合わせ</strong>：メールにて24時間受付可能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2><i class="fas fa-cogs"></i> サービス概要</h2>
+            <div class="section-content">
+                <p class="text-center mb-2">ウエストパーク社労士事務所は、単なる労務管理にとどまらず、企業の持続的な成長と働く人の幸福を両立させるために、多面的なサービスを展開しています。特に、最新のデジタルトランスフォーメーション（DX）技術を駆使した業務効率化支援と、経験豊富なファイナンシャルプランナーによる資金計画支援を強みとしています。</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3><i class="fas fa-laptop-code"></i> DXサポート</h3>
+                        <p>ITと労務の専門知識を併せ持つDXサポートチームが常駐し、各産業や企業に合わせた最適なデジタル化計画を設計・実装します。</p>
+                        <ul>
+                            <li><strong>勤怠管理のデジタル化</strong><br>クラウド型勤怠システムを導入・運用</li>
+                            <li><strong>給与計算の自動化と効率化</strong><br>人為的ミスを減らし処理時間を大幅短縮</li>
+                            <li><strong>労働・社会保険手続きのオンライン化</strong><br>迅速で正確な処理とペーパーレス化</li>
+                            <li><strong>就業規則などの電子管理</strong><br>改定履歴管理や従業員周知をデジタル化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-invoice-dollar"></i> 助成金申請サポート</h3>
+                        <p>企業の経営環境や課題を詳細にヒアリングし、利用可能な助成金を的確にご提案。申請手続きは当事務所が代行し、申請漏れやエラーを防止します。</p>
+                        <ul>
+                            <li><strong>業務改善助成金</strong><br>企業の生産性向上を図る設備投資や仕組みづくりを支援</li>
+                            <li><strong>人材開発支援助成金</strong><br>従業員のスキルアップや教育訓練を後押し</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-clipboard-list"></i> 労働・社会保険手続き代行</h3>
+                        <p>採用・退職・給与支払い・社会保険加入など、従業員の入れ替わりに伴う複雑な手続きを一元的にサポート。豊富な専門知識とDXツールをフル活用します。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-contract"></i> オーダーメイド就業規則・諸規程の作成</h3>
+                        <p>企業の理念や文化、経営方針を反映したオリジナルの就業規則と諸規程を作成。「企業の想いを従業員に伝える生きたドキュメント」として活用いただけます。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-handshake"></i> 労務相談・顧問サービス</h3>
+                        <p>経営者や人事担当者の皆様の日々の労務課題やトラブルをタイムリーに解決。豊富な経験に基づいた実践的なアドバイスを伴走型でご提供します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2><i class="fas fa-yen-sign"></i> 料金案内</h2>
+            <div class="section-content">
+                <p class="text-center mb-2">ウエストパーク社労士事務所の料金体系はお客様のニーズに合わせた柔軟なプランをご用意しております。透明性の高い料金設定で、安心してご依頼いただけます。</p>
+                
+                <h3>助成金申請サポート</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>着手金</strong>：無料</li>
+                        <li><strong>申請代行報酬</strong>
+                            <ul>
+                                <li>総合顧問契約のお客様：助成金受給額の15%</li>
+                                <li>相談顧問契約のお客様：助成金受給額の20%</li>
+                                <li>顧問契約なしの単独依頼の場合：助成金受給額の30%</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <h3>顧問契約プラン</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>プラン名</th>
+                                <th>基本契約料（月額・税込）</th>
+                                <th>手続業務料（月額・税込）</th>
+                                <th>内容概要</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 総合顧問</td>
+                                <td>22,000円～（4名まで）</td>
+                                <td>5,500円～（5名以上は5名単位で加算）</td>
+                                <td>労働保険・社会保険等の各種手続き全般を含む総合支援。</td>
+                            </tr>
+                            <tr>
+                                <td>② 相談顧問</td>
+                                <td>10,000円～（4名まで）</td>
+                                <td>2,750円～（5名以上は5名単位で加算）</td>
+                                <td>労働問題に関するご相談・アドバイスを中心に対応。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><small>※社員数は「給与計算対象人数」を基準とします。<br>
+                ※毎年、労働保険料の更新・社会保険料の算定基礎届の時期に別途月額顧問料1ヶ月分を申し受けます。<br>
+                ※契約更新時に社員数の増減に伴う顧問料の見直しを行います。</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidies Section -->
+    <section id="subsidies">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> DXサポート特化型の助成金</h2>
+            <div class="section-content">
+                <p>ウエストパーク社労士事務所は、中小企業の助成金申請代行を中心に、特にDX推進に関連する助成金のご提案と申請支援を専門に行っています。助成金は、厚生労働省が所管する「事業主のための雇用関係助成金」が代表的で、主に雇用機会の拡大や労働者の能力開発に対して支給される返済不要の公的資金です。</p>
+                
+                <h3>助成金活用のメリット</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>要件を満たせば必ず受給可能</strong></li>
+                        <li><strong>雇用や従業員のニーズにマッチした制度設計</strong></li>
+                        <li><strong>返済不要で資金使途に制限がない</strong></li>
+                    </ul>
+                </div>
+                
+                <h3>助成金申請代行の特徴</h3>
+                <ul>
+                    <li><strong>相談無料・着手金ゼロ</strong></li>
+                    <li><strong>代行報酬は助成金額の20%（顧問契約の場合は割引あり）</strong></li>
+                    <li><strong>受給リスクゼロの安心サポート</strong></li>
+                    <li><strong>助成金受給後に報酬請求（前金なし）</strong></li>
+                </ul>
+                
+                <h3>取り扱い助成金一覧</h3>
+                
+                <h4>業務改善助成金</h4>
+                <p>企業の業務生産性向上を目的とした設備投資やシステム導入に加え、事業場内最低賃金を一定額以上引き上げた場合に、その経費の一部を助成します。この助成金は、DXツールやIT機器の導入など生産性革新に直接結びつく投資に活用され、多くの中小企業が利用可能なものです。</p>
+                
+                <h4>人材開発支援助成金</h4>
+                <p>従業員の能力開発や教育訓練に対する助成金で、以下のような施策が対象となります。</p>
+                <ul>
+                    <li>新入社員研修やスキルアップ講座の実施</li>
+                    <li>ITやDX推進に必要な知識・技術の習得支援</li>
+                    <li>eラーニング導入など教育環境の整備</li>
+                </ul>
+                <p>人材の成長を促すことで企業競争力を高め、将来的なDX実現の基盤強化にもつながります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> お問い合わせ</h2>
+            
+            <div class="contact-grid">
+                <div class="office-info">
+                    <h3><i class="fas fa-building"></i> 事務所情報</h3>
+                    <p><strong>事務所名</strong><br>ウエストパーク社会保険労務士事務所</p>
+                    <p><strong>代表</strong><br>野口 聡（特定社会保険労務士／ファイナンシャルプランナー）</p>
+                    <p><strong>所在地</strong><br>〒810-0061 福岡市中央区西公園4-46-304</p>
+                    <p><strong>電話</strong><br><a href="tel:070-3618-8080" class="phone-link">070-3618-8080</a></p>
+                    <p><strong>受付時間</strong><br>平日 9:00〜17:00</p>
+                    <p><strong>メール対応</strong><br>24時間受付可能</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="company">会社名 *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">お名前 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">電話番号</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">ご相談内容 *</label>
+                        <select id="service" name="service" required>
+                            <option value="">選択してください</option>
+                            <option value="dx-support">DXサポート</option>
+                            <option value="subsidies">助成金申請</option>
+                            <option value="labor-procedures">労働・社会保険手続き</option>
+                            <option value="employment-rules">就業規則作成</option>
+                            <option value="consulting">労務相談・顧問</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">詳細・ご質問</label>
+                        <textarea id="message" name="message" placeholder="具体的なご相談内容をお聞かせください"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">無料相談を申し込む</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ウエストパーク社会保険労務士事務所. All rights reserved.</p>
+            <p>DX×労務で福岡の企業を支える</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // EmailJS configuration
+        emailjs.init("YOUR_EMAILJS_USER_ID"); // Replace with actual EmailJS user ID
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '送信中...';
+            submitBtn.disabled = true;
+            
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('お問い合わせを送信しました。24時間以内にご連絡いたします。');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('送信に失敗しました。お電話でお問い合わせください。');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle (basic implementation)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+    
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
