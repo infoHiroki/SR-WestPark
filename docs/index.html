@@ -55,13 +55,17 @@
     </header>
 
     <!-- ヒーローセクション -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-6">福岡から企業の未来を支える</h2>
-            <p class="text-xl sm:text-2xl mb-8">DX推進・助成金活用で、持続可能な経営をサポート</p>
+    <section class="relative bg-cover bg-center py-32" style="background-image: url('images/nishi-park-sakura.jpg');">
+        <!-- オーバーレイ -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/70"></div>
+
+        <!-- コンテンツ -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-lg">福岡から企業の未来を支える</h2>
+            <p class="text-xl sm:text-2xl mb-8 text-white drop-shadow-md">DX推進・助成金活用で、持続可能な経営をサポート</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">無料相談はこちら</a>
-                <a href="services.html" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition">サービス詳細</a>
+                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">無料相談はこちら</a>
+                <a href="services.html" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">サービス詳細</a>
             </div>
         </div>
     </section>
@@ -169,6 +173,7 @@
             </div>
             <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
                 <p>&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+                <p class="mt-2 text-xs">写真提供：福岡県観光連盟</p>
             </div>
         </div>
     </footer>
