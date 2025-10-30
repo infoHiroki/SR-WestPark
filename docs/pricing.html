@@ -21,343 +21,335 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- ヘッダー -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <h1 class="text-xl sm:text-2xl font-bold text-primary">ウエストパーク社労士事務所</h1>
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                    <a href="services.html" class="text-gray-700 hover:text-primary font-medium">業務内容</a>
-                    <a href="pricing.html" class="text-primary font-medium border-b-2 border-primary">料金案内</a>
-                    <a href="subsidies.html" class="text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                    <a href="contact.html" class="text-white bg-accent hover:bg-orange-600 px-4 py-2 rounded-md font-medium">お問い合わせ</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+    <!-- モバイルメニューボタン（固定） -->
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- サイドバー -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <!-- ロゴ -->
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-lg font-bold text-primary leading-tight">ウエストパーク<br>社労士事務所</h1>
+        </div>
+
+        <!-- ナビゲーション -->
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">ホーム</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">事務所案内</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">業務内容</a></li>
+                <li><a href="pricing.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">料金案内</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金情報</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <!-- ページ内目次 -->
+        <div class="p-4 border-t border-gray-200">
+            <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
+            <ul class="space-y-1 text-sm">
+                <li><a href="#subsidy-pricing" class="block px-2 py-1 text-gray-600 hover:text-primary transition">助成金申請サポート</a></li>
+                <li><a href="#advisory-plans" class="block px-2 py-1 text-gray-600 hover:text-primary transition">顧問契約プラン</a></li>
+                <li><a href="#comparison" class="block px-2 py-1 text-gray-600 hover:text-primary transition">プラン比較表</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- オーバーレイ（モバイル時） -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="lg:ml-64">
+        <!-- ページタイトル -->
+        <section class="bg-primary text-white py-12">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold">料金案内</h2>
+                <p class="mt-4 text-lg">透明性の高い料金設定で、安心してご依頼いただけます</p>
             </div>
-            <!-- モバイルメニュー -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">ホーム</a>
-                <a href="about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                <a href="services.html" class="block py-2 text-gray-700 hover:text-primary font-medium">業務内容</a>
-                <a href="pricing.html" class="block py-2 text-primary font-medium">料金案内</a>
-                <a href="subsidies.html" class="block py-2 text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                <a href="contact.html" class="block py-2 text-white bg-accent hover:bg-orange-600 px-4 rounded-md font-medium text-center mt-2">お問い合わせ</a>
+        </section>
+
+        <!-- イントロダクション -->
+        <section class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所の料金体系はお客様のニーズに合わせた柔軟なプランをご用意しております。透明性の高い料金設定で、安心してご依頼いただけます。</p>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- パンくずリスト -->
-    <nav class="bg-gray-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>
-                    <a href="index.html" class="hover:text-primary transition">ホーム</a>
-                </li>
-                <li class="flex items-center">
-                    <span class="mx-2 text-gray-400">/</span>
-                    <span class="text-gray-800 font-medium">料金案内</span>
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- ページタイトル -->
-    <section class="bg-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold">料金案内</h2>
-            <p class="mt-4 text-lg">透明性の高い料金設定で、安心してご依頼いただけます</p>
-        </div>
-    </section>
-
-    <!-- イントロダクション -->
-    <section class="py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所の料金体系はお客様のニーズに合わせた柔軟なプランをご用意しております。透明性の高い料金設定で、安心してご依頼いただけます。</p>
-        </div>
-    </section>
-
-    <!-- 助成金申請サポート料金 -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">💰</div>
-                    <h3 class="text-2xl font-bold text-primary">助成金申請サポート</h3>
-                </div>
-
-                <div class="mb-6">
-                    <div class="bg-blue-50 p-6 rounded-lg mb-4">
-                        <h4 class="text-xl font-bold text-primary mb-3">着手金</h4>
-                        <p class="text-3xl font-bold text-gray-800">無料</p>
-                        <p class="text-sm text-gray-600 mt-2">※ 助成金受給後の完全成功報酬型です</p>
-                    </div>
-
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">申請代行報酬</h4>
-
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-secondary pl-6 py-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <h5 class="font-bold text-gray-800">総合顧問契約のお客様</h5>
-                                <span class="text-2xl font-bold text-primary">15%</span>
-                            </div>
-                            <p class="text-sm text-gray-600">助成金受給額の15%</p>
-                        </div>
-
-                        <div class="border-l-4 border-secondary pl-6 py-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <h5 class="font-bold text-gray-800">相談顧問契約のお客様</h5>
-                                <span class="text-2xl font-bold text-primary">20%</span>
-                            </div>
-                            <p class="text-sm text-gray-600">助成金受給額の20%</p>
-                        </div>
-
-                        <div class="border-l-4 border-accent pl-6 py-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <h5 class="font-bold text-gray-800">顧問契約なしの単独依頼</h5>
-                                <span class="text-2xl font-bold text-accent">30%</span>
-                            </div>
-                            <p class="text-sm text-gray-600">助成金受給額の30%</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-yellow-50 border-l-4 border-accent p-4 rounded">
-                    <p class="text-sm text-gray-700"><strong>ポイント：</strong>着手金無料、助成金受給後の後払いなので、リスクなくご依頼いただけます。顧問契約をいただいているお客様は割引料金でご利用可能です。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 顧問契約プラン -->
-    <section class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">顧問契約プラン</h3>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <!-- 総合顧問プラン -->
-                <div class="bg-white rounded-lg shadow-lg border-2 border-primary p-8">
-                    <div class="text-center mb-6">
-                        <h4 class="text-2xl font-bold text-primary mb-2">総合顧問プラン</h4>
-                        <p class="text-gray-600">労働保険・社会保険等の各種手続き全般を含む総合支援</p>
+        <!-- 助成金申請サポート料金 -->
+        <section id="subsidy-pricing" class="py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">💰</div>
+                        <h3 class="text-2xl font-bold text-primary">助成金申請サポート</h3>
                     </div>
 
                     <div class="mb-6">
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <p class="text-sm text-gray-600 mb-1">基本契約料（月額・税込）</p>
-                            <p class="text-3xl font-bold text-primary">22,000円〜</p>
-                            <p class="text-sm text-gray-600 mt-1">4名まで</p>
+                        <div class="bg-blue-50 p-6 rounded-lg mb-4">
+                            <h4 class="text-xl font-bold text-primary mb-3">着手金</h4>
+                            <p class="text-3xl font-bold text-gray-800">無料</p>
+                            <p class="text-sm text-gray-600 mt-2">※ 助成金受給後の完全成功報酬型です</p>
                         </div>
 
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="text-sm text-gray-600 mb-1">手続業務料（月額・税込）</p>
-                            <p class="text-2xl font-bold text-gray-800">5,500円〜</p>
-                            <p class="text-sm text-gray-600 mt-1">5名以上は5名単位で加算</p>
-                        </div>
-                    </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">申請代行報酬</h4>
 
-                    <div class="border-t pt-4">
-                        <h5 class="font-bold text-gray-800 mb-3">サービス内容</h5>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>労務相談（電話・メール）</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>労働・社会保険手続き全般</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>就業規則の作成・改定</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>助成金のご提案</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>DXサポート</span>
-                            </li>
-                        </ul>
-                    </div>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-secondary pl-6 py-3">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h5 class="font-bold text-gray-800">総合顧問契約のお客様</h5>
+                                    <span class="text-2xl font-bold text-primary">15%</span>
+                                </div>
+                                <p class="text-sm text-gray-600">助成金受給額の15%</p>
+                            </div>
 
-                    <div class="mt-6">
-                        <a href="contact.html" class="block text-center bg-primary hover:bg-blue-900 text-white px-6 py-3 rounded-md font-bold transition">総合顧問について相談する</a>
-                    </div>
-                </div>
+                            <div class="border-l-4 border-secondary pl-6 py-3">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h5 class="font-bold text-gray-800">相談顧問契約のお客様</h5>
+                                    <span class="text-2xl font-bold text-primary">20%</span>
+                                </div>
+                                <p class="text-sm text-gray-600">助成金受給額の20%</p>
+                            </div>
 
-                <!-- 相談顧問プラン -->
-                <div class="bg-white rounded-lg shadow-lg border-2 border-secondary p-8">
-                    <div class="text-center mb-6">
-                        <h4 class="text-2xl font-bold text-secondary mb-2">相談顧問プラン</h4>
-                        <p class="text-gray-600">労働問題に関するご相談・アドバイスを中心に対応</p>
-                    </div>
-
-                    <div class="mb-6">
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <p class="text-sm text-gray-600 mb-1">基本契約料（月額・税込）</p>
-                            <p class="text-3xl font-bold text-secondary">10,000円〜</p>
-                            <p class="text-sm text-gray-600 mt-1">4名まで</p>
-                        </div>
-
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="text-sm text-gray-600 mb-1">手続業務料（月額・税込）</p>
-                            <p class="text-2xl font-bold text-gray-800">2,750円〜</p>
-                            <p class="text-sm text-gray-600 mt-1">5名以上は5名単位で加算</p>
+                            <div class="border-l-4 border-accent pl-6 py-3">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h5 class="font-bold text-gray-800">顧問契約なしの単独依頼</h5>
+                                    <span class="text-2xl font-bold text-accent">30%</span>
+                                </div>
+                                <p class="text-sm text-gray-600">助成金受給額の30%</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="border-t pt-4">
-                        <h5 class="font-bold text-gray-800 mb-3">サービス内容</h5>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>労務相談（電話・メール）</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>労働・社会保険に関する助言</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>人事労務に関する情報提供</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">✓</span>
-                                <span>助成金のご提案</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-6">
-                        <a href="contact.html" class="block text-center bg-secondary hover:bg-blue-600 text-white px-6 py-3 rounded-md font-bold transition">相談顧問について相談する</a>
+                    <div class="bg-yellow-50 border-l-4 border-accent p-4 rounded">
+                        <p class="text-sm text-gray-700"><strong>ポイント：</strong>着手金無料、助成金受給後の後払いなので、リスクなくご依頼いただけます。顧問契約をいただいているお客様は割引料金でご利用可能です。</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 注意事項 -->
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h4 class="font-bold text-gray-800 mb-4">料金に関するご注意</h4>
-                <ul class="space-y-2 text-sm text-gray-700">
-                    <li class="flex items-start">
-                        <span class="text-primary mr-2">•</span>
-                        <span>社員数は「給与計算対象人数」を基準とします。</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-primary mr-2">•</span>
-                        <span>毎年、労働保険料の更新・社会保険料の算定基礎届の時期に別途月額顧問料1ヶ月分を申し受けます。</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-primary mr-2">•</span>
-                        <span>契約更新時に社員数の増減に伴う顧問料の見直しを行います。</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <!-- 顧問契約プラン -->
+        <section id="advisory-plans" class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center">顧問契約プラン</h3>
 
-    <!-- プラン比較表 -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">プラン比較表</h3>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- 総合顧問プラン -->
+                    <div class="bg-white rounded-lg shadow-lg border-2 border-primary p-8">
+                        <div class="text-center mb-6">
+                            <h4 class="text-2xl font-bold text-primary mb-2">総合顧問プラン</h4>
+                            <p class="text-gray-600">労働保険・社会保険等の各種手続き全般を含む総合支援</p>
+                        </div>
 
-            <div class="bg-white rounded-lg shadow-md overflow-x-auto">
-                <table class="w-full">
-                    <thead class="bg-primary text-white">
-                        <tr>
-                            <th class="px-6 py-4 text-left">サービス内容</th>
-                            <th class="px-6 py-4 text-center">総合顧問</th>
-                            <th class="px-6 py-4 text-center">相談顧問</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-gray-800">労務相談</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 font-medium text-gray-800">各種手続き代行</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                            <td class="px-6 py-4 text-center text-gray-400">△</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-gray-800">就業規則作成</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                            <td class="px-6 py-4 text-center text-gray-400">△</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 font-medium text-gray-800">DXサポート</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                            <td class="px-6 py-4 text-center text-gray-400">△</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-gray-800">助成金提案</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                            <td class="px-6 py-4 text-center text-secondary">◎</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 font-medium text-gray-800">助成金申請報酬</td>
-                            <td class="px-6 py-4 text-center font-bold text-primary">15%</td>
-                            <td class="px-6 py-4 text-center font-bold text-primary">20%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <div class="mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 mb-1">基本契約料（月額・税込）</p>
+                                <p class="text-3xl font-bold text-primary">22,000円〜</p>
+                                <p class="text-sm text-gray-600 mt-1">4名まで</p>
+                            </div>
 
-            <div class="mt-4 text-sm text-gray-600 text-center">
-                <p>◎：含まれています　△：別途ご相談</p>
-            </div>
-        </div>
-    </section>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-1">手続業務料（月額・税込）</p>
+                                <p class="text-2xl font-bold text-gray-800">5,500円〜</p>
+                                <p class="text-sm text-gray-600 mt-1">5名以上は5名単位で加算</p>
+                            </div>
+                        </div>
 
-    <!-- まとめ -->
-    <section class="py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、お客様の規模や必要業務に応じて最適なプランを提案し、経営の安定と労務管理の効率化をサポートします。ご不明点はお気軽にお問い合わせください。</p>
-        </div>
-    </section>
+                        <div class="border-t pt-4">
+                            <h5 class="font-bold text-gray-800 mb-3">サービス内容</h5>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>労務相談（電話・メール）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>労働・社会保険手続き全般</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>就業規則の作成・改定</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>助成金のご提案</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>DXサポート</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-    <!-- CTA セクション -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-bold mb-4">お見積りは無料です</h3>
-            <p class="mb-8">企業の規模や課題に応じて、最適なプランをご提案いたします。</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">お見積り依頼</a>
-                <a href="tel:080-3948-2324" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition">📞 080-3948-2324</a>
-            </div>
-        </div>
-    </section>
+                    <!-- 相談顧問プラン -->
+                    <div class="bg-white rounded-lg shadow-lg border-2 border-secondary p-8">
+                        <div class="text-center mb-6">
+                            <h4 class="text-2xl font-bold text-secondary mb-2">相談顧問プラン</h4>
+                            <p class="text-gray-600">労働問題に関するご相談・アドバイスを中心に対応</p>
+                        </div>
 
-    <!-- フッター -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-3">ウエストパーク社労士事務所</h3>
-                <p class="text-gray-300 text-sm mb-6 max-w-2xl mx-auto">福岡市中央区を拠点に、企業のDX推進と労務管理をサポートする社会保険労務士事務所です。</p>
-                <div class="border-t border-gray-700 pt-6">
-                    <p class="text-sm text-gray-400">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+                        <div class="mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 mb-1">基本契約料（月額・税込）</p>
+                                <p class="text-3xl font-bold text-secondary">10,000円〜</p>
+                                <p class="text-sm text-gray-600 mt-1">4名まで</p>
+                            </div>
+
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-1">手続業務料（月額・税込）</p>
+                                <p class="text-2xl font-bold text-gray-800">2,750円〜</p>
+                                <p class="text-sm text-gray-600 mt-1">5名以上は5名単位で加算</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t pt-4">
+                            <h5 class="font-bold text-gray-800 mb-3">サービス内容</h5>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>労務相談（電話・メール）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>労働・社会保険に関する助言</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>人事労務に関する情報提供</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-secondary mr-2">✓</span>
+                                    <span>助成金のご提案</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 注意事項 -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-gray-800 mb-4">料金に関するご注意</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>社員数は「給与計算対象人数」を基準とします。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>毎年、労働保険料の更新・社会保険料の算定基礎届の時期に別途月額顧問料1ヶ月分を申し受けます。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>契約更新時に社員数の増減に伴う顧問料の見直しを行います。</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- プラン比較表 -->
+        <section id="comparison" class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center">プラン比較表</h3>
+
+                <div class="bg-white rounded-lg shadow-md overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">サービス内容</th>
+                                <th class="px-6 py-4 text-center">総合顧問</th>
+                                <th class="px-6 py-4 text-center">相談顧問</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">労務相談</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-800">各種手続き代行</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                                <td class="px-6 py-4 text-center text-gray-400">△</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">就業規則作成</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                                <td class="px-6 py-4 text-center text-gray-400">△</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-800">DXサポート</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                                <td class="px-6 py-4 text-center text-gray-400">△</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">助成金提案</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                                <td class="px-6 py-4 text-center text-secondary">◎</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-800">助成金申請報酬</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary">15%</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary">20%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4 text-sm text-gray-600 text-center">
+                    <p>◎：含まれています　△：別途ご相談</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめ -->
+        <section class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、お客様の規模や必要業務に応じて最適なプランを提案し、経営の安定と労務管理の効率化をサポートします。ご不明点はお気軽にお問い合わせください。</p>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="py-8 border-t border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script>
-        // モバイルメニューの開閉
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // モバイルサイドバーの開閉
+        const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>

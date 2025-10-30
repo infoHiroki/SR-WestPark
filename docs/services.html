@@ -21,302 +21,270 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- ヘッダー -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <h1 class="text-xl sm:text-2xl font-bold text-primary">ウエストパーク社労士事務所</h1>
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                    <a href="services.html" class="text-primary font-medium border-b-2 border-primary">業務内容</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-primary font-medium">料金案内</a>
-                    <a href="subsidies.html" class="text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                    <a href="contact.html" class="text-white bg-accent hover:bg-orange-600 px-4 py-2 rounded-md font-medium">お問い合わせ</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <!-- モバイルメニュー -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">ホーム</a>
-                <a href="about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                <a href="services.html" class="block py-2 text-primary font-medium">業務内容</a>
-                <a href="pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">料金案内</a>
-                <a href="subsidies.html" class="block py-2 text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                <a href="contact.html" class="block py-2 text-white bg-accent hover:bg-orange-600 px-4 rounded-md font-medium text-center mt-2">お問い合わせ</a>
-            </div>
+    <!-- モバイルメニューボタン（固定） -->
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- サイドバー -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <!-- ロゴ -->
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-lg font-bold text-primary leading-tight">ウエストパーク<br>社労士事務所</h1>
         </div>
-    </header>
 
-    <!-- パンくずリスト -->
-    <nav class="bg-gray-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>
-                    <a href="index.html" class="hover:text-primary transition">ホーム</a>
-                </li>
-                <li class="flex items-center">
-                    <span class="mx-2 text-gray-400">/</span>
-                    <span class="text-gray-800 font-medium">業務内容</span>
-                </li>
-            </ol>
+        <!-- ナビゲーション -->
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">ホーム</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">事務所案内</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">業務内容</a></li>
+                <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金情報</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <!-- ページ内目次 -->
+        <div class="p-4 border-t border-gray-200">
+            <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
+            <ul class="space-y-1 text-sm">
+                <li><a href="#dx" class="block px-2 py-1 text-gray-600 hover:text-primary transition">DXサポート</a></li>
+                <li><a href="#subsidy" class="block px-2 py-1 text-gray-600 hover:text-primary transition">助成金申請サポート</a></li>
+                <li><a href="#procedures" class="block px-2 py-1 text-gray-600 hover:text-primary transition">労働・社会保険手続き</a></li>
+                <li><a href="#rules" class="block px-2 py-1 text-gray-600 hover:text-primary transition">就業規則作成</a></li>
+                <li><a href="#consulting" class="block px-2 py-1 text-gray-600 hover:text-primary transition">労務相談・顧問サービス</a></li>
+            </ul>
         </div>
-    </nav>
+    </aside>
 
-    <!-- ページタイトル -->
-    <section class="bg-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold">業務内容</h2>
-            <p class="mt-4 text-lg">企業の持続的な成長と働く人の幸福を両立させる、多面的なサービス</p>
-        </div>
-    </section>
+    <!-- オーバーレイ（モバイル時） -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
 
-    <!-- イントロダクション -->
-    <section class="py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、単なる労務管理にとどまらず、企業の持続的な成長と働く人の幸福を両立させるために、多面的なサービスを展開しています。特に、最新のデジタルトランスフォーメーション（DX）技術を駆使した業務効率化支援を強みとしています。</p>
-        </div>
-    </section>
-
-    <!-- サービス一覧 -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- DXサポート -->
-            <div id="dx" class="mb-16 bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">💼</div>
-                    <h3 class="text-2xl font-bold text-primary">DXサポート</h3>
-                </div>
-
-                <p class="text-gray-700 mb-6">当事務所には、ITと労務の専門知識を併せ持つDXサポートチームが常駐し、各産業や企業に合わせた最適なデジタル化計画を設計・実装します。これにより、業務の自動化や効率化を進め、経営資源の最適配分と生産性向上を実現します。</p>
-
-                <h4 class="text-xl font-bold text-gray-800 mb-4">DXサポートの主な内容</h4>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h5 class="font-bold text-primary mb-2">勤怠管理のデジタル化</h5>
-                        <p class="text-gray-700 text-sm">紙や手動での管理を脱却し、クラウド型勤怠システムを導入・運用します。残業時間の自動集計や不正打刻防止機能で、正確かつ透明性の高い労働時間管理を実現。</p>
-                    </div>
-
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h5 class="font-bold text-primary mb-2">給与計算の自動化と効率化</h5>
-                        <p class="text-gray-700 text-sm">給与計算ソフトと連携した業務フローを構築し、人為的ミスを減らすとともに処理時間を大幅短縮。社会保険料や税務改正も自動反映し、常に最新状態に対応。</p>
-                    </div>
-
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h5 class="font-bold text-primary mb-2">労働・社会保険手続きのオンライン化</h5>
-                        <p class="text-gray-700 text-sm">申請や届け出のオンライン手続き完結を推進し、迅速で正確な処理とペーパーレス化による業務負荷軽減を実現。</p>
-                    </div>
-
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h5 class="font-bold text-primary mb-2">就業規則などの電子管理と共有ツール導入</h5>
-                        <p class="text-gray-700 text-sm">就業規則や諸規程の改定履歴管理や従業員周知をデジタル化し、迅速かつ確実な情報共有をサポート。</p>
-                    </div>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <a href="contact.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold transition">DXサポートについて相談する</a>
-                </div>
+    <!-- メインコンテンツ -->
+    <main class="lg:ml-64">
+        <!-- ページタイトル -->
+        <section class="bg-primary text-white py-12">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold">業務内容</h2>
+                <p class="mt-4 text-lg">企業の持続的な成長と働く人の幸福を両立させる、多面的なサービス</p>
             </div>
+        </section>
 
-            <!-- 助成金申請サポート -->
-            <div id="subsidy" class="mb-16 bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">💰</div>
-                    <h3 class="text-2xl font-bold text-primary">助成金申請サポート</h3>
-                </div>
-
-                <p class="text-gray-700 mb-6">企業の経営環境や課題を詳細にヒアリングし、利用可能な助成金を的確にご提案。申請手続きは当事務所が代行し、申請漏れやエラーを防止して資金面の安定化を強力に支援いたします。</p>
-
-                <h4 class="text-xl font-bold text-gray-800 mb-4">対象となる助成金の例</h4>
-
-                <div class="space-y-4">
-                    <div class="border-l-4 border-secondary pl-4">
-                        <h5 class="font-bold text-gray-800 mb-2">業務改善助成金</h5>
-                        <p class="text-gray-700 text-sm">企業の生産性向上を図る設備投資や仕組みづくりを支援</p>
-                    </div>
-
-                    <div class="border-l-4 border-secondary pl-4">
-                        <h5 class="font-bold text-gray-800 mb-2">人材開発支援助成金</h5>
-                        <p class="text-gray-700 text-sm">従業員のスキルアップや教育訓練を後押し</p>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
-                    <p class="text-sm text-gray-700"><strong>特徴：</strong>着手金無料、助成金受給後の報酬請求で安心してご依頼いただけます。</p>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <a href="subsidies.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold transition">助成金の詳細を見る</a>
-                </div>
+        <!-- イントロダクション -->
+        <section class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、単なる労務管理にとどまらず、企業の持続的な成長と働く人の幸福を両立させるために、多面的なサービスを展開しています。特に、最新のデジタルトランスフォーメーション（DX）技術を駆使した業務効率化支援を強みとしています。</p>
             </div>
+        </section>
 
-            <!-- 労働・社会保険手続き代行 -->
-            <div id="procedures" class="mb-16 bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">📝</div>
-                    <h3 class="text-2xl font-bold text-primary">労働・社会保険手続き代行</h3>
-                </div>
-
-                <p class="text-gray-700 mb-6">採用・退職・給与支払い・社会保険加入など、従業員の入れ替わりに伴う複雑な手続きを一元的にサポート。豊富な専門知識とDXツールをフル活用し、ミスなく迅速な対応を実現します。</p>
-
-                <div class="grid md:grid-cols-3 gap-4">
-                    <div class="bg-gray-50 p-4 rounded-lg text-center">
-                        <p class="font-bold text-primary mb-2">入社手続き</p>
-                        <p class="text-sm text-gray-600">雇用保険・社会保険加入手続き</p>
+        <!-- サービス一覧 -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- DXサポート -->
+                <div id="dx" class="mb-16 bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">💼</div>
+                        <h3 class="text-2xl font-bold text-primary">DXサポート</h3>
                     </div>
-                    <div class="bg-gray-50 p-4 rounded-lg text-center">
-                        <p class="font-bold text-primary mb-2">退職手続き</p>
-                        <p class="text-sm text-gray-600">離職票発行・資格喪失手続き</p>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-lg text-center">
-                        <p class="font-bold text-primary mb-2">各種変更手続き</p>
-                        <p class="text-sm text-gray-600">給与変更・住所変更等の届出</p>
-                    </div>
-                </div>
 
-                <div class="mt-6 text-center">
-                    <a href="contact.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold transition">手続き代行について相談する</a>
-                </div>
-            </div>
+                    <p class="text-gray-700 mb-6">当事務所には、ITと労務の専門知識を併せ持つDXサポートチームが常駐し、各産業や企業に合わせた最適なデジタル化計画を設計・実装します。これにより、業務の自動化や効率化を進め、経営資源の最適配分と生産性向上を実現します。</p>
 
-            <!-- オーダーメイド就業規則・諸規程の作成 -->
-            <div id="rules" class="mb-16 bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">📋</div>
-                    <h3 class="text-2xl font-bold text-primary">オーダーメイド就業規則・諸規程の作成</h3>
-                </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">DXサポートの主な内容</h4>
 
-                <p class="text-gray-700 mb-6">企業の理念や文化、経営方針を反映したオリジナルの就業規則と諸規程を作成。ルールとしての機能だけでなく、「企業の想いを従業員に伝える生きたドキュメント」として活用いただけます。</p>
-
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h4 class="font-bold text-gray-800 mb-3">作成の流れ</h4>
-                    <ol class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="font-bold text-primary mr-2">1.</span>
-                            <span>企業理念・経営方針のヒアリング</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-bold text-primary mr-2">2.</span>
-                            <span>現状の労務管理状況の確認</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-bold text-primary mr-2">3.</span>
-                            <span>オーダーメイド就業規則の作成</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-bold text-primary mr-2">4.</span>
-                            <span>従業員への説明・意見聴取</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-bold text-primary mr-2">5.</span>
-                            <span>労働基準監督署への届出代行</span>
-                        </li>
-                    </ol>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <a href="contact.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold transition">就業規則作成について相談する</a>
-                </div>
-            </div>
-
-            <!-- 労務相談・顧問サービス -->
-            <div id="consulting" class="mb-16 bg-white rounded-lg shadow-md p-8">
-                <div class="flex items-center mb-6">
-                    <div class="text-4xl mr-4">🤝</div>
-                    <h3 class="text-2xl font-bold text-primary">労務相談・顧問サービス</h3>
-                </div>
-
-                <p class="text-gray-700 mb-6">経営者や人事担当者の皆様の日々の労務課題やトラブルをタイムリーに解決。人事戦略の策定から労使問題の予防まで、豊富な経験に基づいた実践的なアドバイスを伴走型でご提供します。</p>
-
-                <h4 class="text-xl font-bold text-gray-800 mb-4">サポート内容</h4>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <div class="text-secondary text-2xl mr-3">✓</div>
-                        <div>
-                            <h5 class="font-bold text-gray-800 mb-1">労務相談</h5>
-                            <p class="text-sm text-gray-600">日々の労務問題への迅速な対応</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h5 class="font-bold text-primary mb-2">勤怠管理のデジタル化</h5>
+                            <p class="text-gray-700 text-sm">紙や手動での管理を脱却し、クラウド型勤怠システムを導入・運用します。残業時間の自動集計や不正打刻防止機能で、正確かつ透明性の高い労働時間管理を実現。</p>
                         </div>
-                    </div>
 
-                    <div class="flex items-start">
-                        <div class="text-secondary text-2xl mr-3">✓</div>
-                        <div>
-                            <h5 class="font-bold text-gray-800 mb-1">人事制度設計</h5>
-                            <p class="text-sm text-gray-600">評価制度・賃金制度の構築支援</p>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h5 class="font-bold text-primary mb-2">給与計算の自動化と効率化</h5>
+                            <p class="text-gray-700 text-sm">給与計算ソフトと連携した業務フローを構築し、人為的ミスを減らすとともに処理時間を大幅短縮。社会保険料や税務改正も自動反映し、常に最新状態に対応。</p>
                         </div>
-                    </div>
 
-                    <div class="flex items-start">
-                        <div class="text-secondary text-2xl mr-3">✓</div>
-                        <div>
-                            <h5 class="font-bold text-gray-800 mb-1">労使トラブル予防</h5>
-                            <p class="text-sm text-gray-600">未然防止のためのアドバイス</p>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h5 class="font-bold text-primary mb-2">労働・社会保険手続きのオンライン化</h5>
+                            <p class="text-gray-700 text-sm">申請や届け出のオンライン手続き完結を推進し、迅速で正確な処理とペーパーレス化による業務負荷軽減を実現。</p>
                         </div>
-                    </div>
 
-                    <div class="flex items-start">
-                        <div class="text-secondary text-2xl mr-3">✓</div>
-                        <div>
-                            <h5 class="font-bold text-gray-800 mb-1">助成金活用支援</h5>
-                            <p class="text-sm text-gray-600">最適な助成金のご提案</p>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h5 class="font-bold text-primary mb-2">就業規則などの電子管理と共有ツール導入</h5>
+                            <p class="text-gray-700 text-sm">就業規則や諸規程の改定履歴管理や従業員周知をデジタル化し、迅速かつ確実な情報共有をサポート。</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 text-center">
-                    <a href="pricing.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-md font-bold transition">顧問料金を見る</a>
+                <!-- 助成金申請サポート -->
+                <div id="subsidy" class="mb-16 bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">💰</div>
+                        <h3 class="text-2xl font-bold text-primary">助成金申請サポート</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-6">企業の経営環境や課題を詳細にヒアリングし、利用可能な助成金を的確にご提案。申請手続きは当事務所が代行し、申請漏れやエラーを防止して資金面の安定化を強力に支援いたします。</p>
+
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">対象となる助成金の例</h4>
+
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-secondary pl-4">
+                            <h5 class="font-bold text-gray-800 mb-2">業務改善助成金</h5>
+                            <p class="text-gray-700 text-sm">企業の生産性向上を図る設備投資や仕組みづくりを支援</p>
+                        </div>
+
+                        <div class="border-l-4 border-secondary pl-4">
+                            <h5 class="font-bold text-gray-800 mb-2">人材開発支援助成金</h5>
+                            <p class="text-gray-700 text-sm">従業員のスキルアップや教育訓練を後押し</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-700"><strong>特徴：</strong>着手金無料、助成金受給後の報酬請求で安心してご依頼いただけます。</p>
+                    </div>
+                </div>
+
+                <!-- 労働・社会保険手続き代行 -->
+                <div id="procedures" class="mb-16 bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">📝</div>
+                        <h3 class="text-2xl font-bold text-primary">労働・社会保険手続き代行</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-6">採用・退職・給与支払い・社会保険加入など、従業員の入れ替わりに伴う複雑な手続きを一元的にサポート。豊富な専門知識とDXツールをフル活用し、ミスなく迅速な対応を実現します。</p>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <p class="font-bold text-primary mb-2">入社手続き</p>
+                            <p class="text-sm text-gray-600">雇用保険・社会保険加入手続き</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <p class="font-bold text-primary mb-2">退職手続き</p>
+                            <p class="text-sm text-gray-600">離職票発行・資格喪失手続き</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <p class="font-bold text-primary mb-2">各種変更手続き</p>
+                            <p class="text-sm text-gray-600">給与変更・住所変更等の届出</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- オーダーメイド就業規則・諸規程の作成 -->
+                <div id="rules" class="mb-16 bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">📋</div>
+                        <h3 class="text-2xl font-bold text-primary">オーダーメイド就業規則・諸規程の作成</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-6">企業の理念や文化、経営方針を反映したオリジナルの就業規則と諸規程を作成。ルールとしての機能だけでなく、「企業の想いを従業員に伝える生きたドキュメント」として活用いただけます。</p>
+
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-gray-800 mb-3">作成の流れ</h4>
+                        <ol class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="font-bold text-primary mr-2">1.</span>
+                                <span>企業理念・経営方針のヒアリング</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-primary mr-2">2.</span>
+                                <span>現状の労務管理状況の確認</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-primary mr-2">3.</span>
+                                <span>オーダーメイド就業規則の作成</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-primary mr-2">4.</span>
+                                <span>従業員への説明・意見聴取</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-primary mr-2">5.</span>
+                                <span>労働基準監督署への届出代行</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- 労務相談・顧問サービス -->
+                <div id="consulting" class="mb-16 bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🤝</div>
+                        <h3 class="text-2xl font-bold text-primary">労務相談・顧問サービス</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-6">経営者や人事担当者の皆様の日々の労務課題やトラブルをタイムリーに解決。人事戦略の策定から労使問題の予防まで、豊富な経験に基づいた実践的なアドバイスを伴走型でご提供します。</p>
+
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">サポート内容</h4>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-3">✓</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-1">労務相談</h5>
+                                <p class="text-sm text-gray-600">日々の労務問題への迅速な対応</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-3">✓</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-1">人事制度設計</h5>
+                                <p class="text-sm text-gray-600">評価制度・賃金制度の構築支援</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-3">✓</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-1">労使トラブル予防</h5>
+                                <p class="text-sm text-gray-600">未然防止のためのアドバイス</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-3">✓</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-1">助成金活用支援</h5>
+                                <p class="text-sm text-gray-600">最適な助成金のご提案</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- まとめ -->
-    <section class="py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、DXの推進により、福岡から地域企業の未来を支えるパートナーとして力強く寄り添います。どうぞお気軽にご相談ください。</p>
-        </div>
-    </section>
-
-    <!-- CTA セクション -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-bold mb-4">まずはお気軽にご相談ください</h3>
-            <p class="mb-8">企業の課題をお聞かせください。最適なソリューションをご提案します。</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">お問い合わせフォーム</a>
-                <a href="tel:080-3948-2324" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition">📞 080-3948-2324</a>
+        <!-- まとめ -->
+        <section class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、DXの推進により、福岡から地域企業の未来を支えるパートナーとして力強く寄り添います。どうぞお気軽にご相談ください。</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- フッター -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-3">ウエストパーク社労士事務所</h3>
-                <p class="text-gray-300 text-sm mb-6 max-w-2xl mx-auto">福岡市中央区を拠点に、企業のDX推進と労務管理をサポートする社会保険労務士事務所です。</p>
-                <div class="border-t border-gray-700 pt-6">
-                    <p class="text-sm text-gray-400">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+        <!-- フッター -->
+        <footer class="py-8 border-t border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="text-sm text-gray-500">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
     <script>
-        // モバイルメニューの開閉
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // モバイルサイドバーの開閉
+        const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
         });
 
         // スムーススクロール
@@ -325,7 +293,10 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
