@@ -56,16 +56,18 @@
 
     <!-- ヒーローセクション -->
     <section class="relative bg-cover bg-center py-32" style="background-image: url('images/nishi-park-sakura.jpg');">
-        <!-- オーバーレイ -->
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/70"></div>
+        <!-- ダークオーバーレイ（下部のみ、グラデーション） -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
 
         <!-- コンテンツ -->
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-lg">福岡から企業の未来を支える</h2>
-            <p class="text-xl sm:text-2xl mb-8 text-white drop-shadow-md">DX推進・助成金活用で、持続可能な経営をサポート</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">無料相談はこちら</a>
-                <a href="services.html" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">サービス詳細</a>
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-2xl max-w-4xl mx-auto">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-primary">福岡から企業の未来を支える</h2>
+                <p class="text-xl sm:text-2xl mb-8 text-gray-700">DX推進・助成金活用で、持続可能な経営をサポート</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">無料相談はこちら</a>
+                    <a href="services.html" class="bg-primary hover:bg-blue-900 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">サービス詳細</a>
+                </div>
             </div>
         </div>
     </section>
