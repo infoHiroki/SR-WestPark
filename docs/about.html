@@ -21,201 +21,215 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- ヘッダー -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <h1 class="text-xl sm:text-2xl font-bold text-primary">ウエストパーク社労士事務所</h1>
+    <!-- モバイルメニューボタン（固定） -->
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- サイドバー -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <!-- ロゴ -->
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-lg font-bold text-primary leading-tight">ウエストパーク<br>社労士事務所</h1>
+        </div>
+
+        <!-- ナビゲーション -->
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">ホーム</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">事務所案内</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">業務内容</a></li>
+                <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金情報</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <!-- CTA -->
+        <div class="p-4 border-t border-gray-200">
+            <div class="bg-accent/10 border-2 border-accent p-4 rounded-lg mb-4">
+                <p class="text-sm text-gray-600 mb-2 text-center">お気軽にご相談ください</p>
+                <a href="tel:080-3948-2324" class="block text-center bg-accent hover:bg-orange-600 text-white px-4 py-3 rounded-md font-bold transition">
+                    📞 080-3948-2324
+                </a>
+                <p class="text-xs text-gray-600 text-center mt-2">平日 9:00〜17:00</p>
+            </div>
+            <a href="contact.html" class="block text-center bg-primary hover:bg-blue-900 text-white px-4 py-2 rounded-md font-medium transition">
+                お問い合わせフォーム
+            </a>
+        </div>
+
+        <!-- ページ内目次 -->
+        <div class="p-4 border-t border-gray-200">
+            <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
+            <ul class="space-y-1 text-sm">
+                <li><a href="#greeting" class="block px-2 py-1 text-gray-600 hover:text-primary transition">代表挨拶</a></li>
+                <li><a href="#profile" class="block px-2 py-1 text-gray-600 hover:text-primary transition">代表プロフィール</a></li>
+                <li><a href="#overview" class="block px-2 py-1 text-gray-600 hover:text-primary transition">事務所概要</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- オーバーレイ（モバイル時） -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="lg:ml-64">
+        <!-- ページタイトル -->
+        <section class="bg-primary text-white py-12">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold">事務所案内</h2>
+                <p class="mt-4 text-lg">代表挨拶と事務所概要</p>
+            </div>
+        </section>
+
+        <!-- 代表挨拶 -->
+        <section id="greeting" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8">代表挨拶</h3>
+
+                <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
+                    <p>ウエストパーク社労士事務所のホームページをご覧いただき、ありがとうございます。<br>代表の野口聡と申します。</p>
+
+                    <p>少子化が進んでいます。2024年に生まれた子どもの数は68万6千人。統計を取り始めた1899年以来、初めて70万人を下回りました。</p>
+
+                    <p>「団塊の世代」と呼ばれる1947年から1949年の出生数が平均で269万人、「団塊ジュニア」と呼ばれる1971年から1974年生まれの出生数が平均で204万人であることを考えると、減少の激しさには驚くばかりです。</p>
+
+                    <p>天気予報は外れることがありますが、人口の統計は外れることはありません。20年後には人材の採用が格段に難しくなっていることでしょう。企業にとって恐ろしいのは「資金のショート」ですが、「人材のショート」の方が上回る時代が来るかもしれません。</p>
+
+                    <p>この困難を乗り切るためには、<strong class="text-primary">DX化への取り組みが必要</strong>です。デジタル技術の導入により業務を効率化し、生産性を向上することで、人手不足を補うことが求められます。</p>
+
+                    <p>とはいえ、DXを推進するのは簡単ではありません。「何を導入すればいいのか分からない」、「現場の社員が反対する」、「導入の費用が準備できない」など様々な問題に直面することでしょう。</p>
+
+                    <p class="text-lg font-medium text-primary">そこで、我々社会保険労務士の出番です。</p>
+
+                    <p>まずはヒアリングを行い、機器の導入から助成金の活用、社員のDX研修までをワンストップで提案させていただきます。この機会に是非お声かけください。</p>
                 </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
-                    <a href="about.html" class="text-primary font-medium border-b-2 border-primary">事務所案内</a>
-                    <a href="services.html" class="text-gray-700 hover:text-primary font-medium">業務内容</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-primary font-medium">料金案内</a>
-                    <a href="subsidies.html" class="text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                    <a href="contact.html" class="text-white bg-accent hover:bg-orange-600 px-4 py-2 rounded-md font-medium">お問い合わせ</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+
+                <div class="mt-12 text-right text-gray-700">
+                    <p class="font-bold text-lg">ウエストパーク社労士事務所</p>
+                    <p class="font-bold text-lg">代表 野口 聡</p>
+                </div>
             </div>
-            <!-- モバイルメニュー -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">ホーム</a>
-                <a href="about.html" class="block py-2 text-primary font-medium">事務所案内</a>
-                <a href="services.html" class="block py-2 text-gray-700 hover:text-primary font-medium">業務内容</a>
-                <a href="pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">料金案内</a>
-                <a href="subsidies.html" class="block py-2 text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                <a href="contact.html" class="block py-2 text-white bg-accent hover:bg-orange-600 px-4 rounded-md font-medium text-center mt-2">お問い合わせ</a>
-            </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- パンくずリスト -->
-    <nav class="bg-gray-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li>
-                    <a href="index.html" class="hover:text-primary transition">ホーム</a>
-                </li>
-                <li class="flex items-center">
-                    <span class="mx-2 text-gray-400">/</span>
-                    <span class="text-gray-800 font-medium">事務所案内</span>
-                </li>
-            </ol>
-        </div>
-    </nav>
+        <!-- 代表プロフィール -->
+        <section id="profile" class="py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8">代表プロフィール</h3>
 
-    <!-- ページタイトル -->
-    <section class="bg-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold">事務所案内</h2>
-            <p class="mt-4 text-lg">代表挨拶と事務所概要</p>
-        </div>
-    </section>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/3">
+                            <img src="images/noguchi-profile.png" alt="代表 野口 聡" class="w-full h-auto rounded-lg shadow-lg">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">野口 聡（のぐち さとし）</h4>
+                            <div class="space-y-3 text-gray-700">
+                                <p class="font-medium text-primary">特定社会保険労務士</p>
 
-    <!-- 代表挨拶 -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">代表挨拶</h3>
+                                <div class="border-t pt-4 mt-4">
+                                    <h5 class="font-bold mb-2">経歴</h5>
+                                    <ul class="space-y-2">
+                                        <li>• 慶應義塾大学 卒業</li>
+                                        <li>• 金融機関勤務を経て独立</li>
+                                        <li>• 2015年 社会保険労務士登録</li>
+                                    </ul>
+                                </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
-                <p>ウエストパーク社労士事務所のホームページをご覧いただき、ありがとうございます。<br>代表の野口聡と申します。</p>
-
-                <p>少子化が進んでいます。2024年に生まれた子どもの数は68万6千人。統計を取り始めた1899年以来、初めて70万人を下回りました。</p>
-
-                <p>「団塊の世代」と呼ばれる1947年から1949年の出生数が平均で269万人、「団塊ジュニア」と呼ばれる1971年から1974年生まれの出生数が平均で204万人であることを考えると、減少の激しさには驚くばかりです。</p>
-
-                <p>天気予報は外れることがありますが、人口の統計は外れることはありません。20年後には人材の採用が格段に難しくなっていることでしょう。企業にとって恐ろしいのは「資金のショート」ですが、「人材のショート」の方が上回る時代が来るかもしれません。</p>
-
-                <p>この困難を乗り切るためには、<strong class="text-primary">DX化への取り組みが必要</strong>です。デジタル技術の導入により業務を効率化し、生産性を向上することで、人手不足を補うことが求められます。</p>
-
-                <p>とはいえ、DXを推進するのは簡単ではありません。「何を導入すればいいのか分からない」、「現場の社員が反対する」、「導入の費用が準備できない」など様々な問題に直面することでしょう。</p>
-
-                <p class="text-lg font-medium text-primary">そこで、我々社会保険労務士の出番です。</p>
-
-                <p>まずはヒアリングを行い、機器の導入から助成金の活用、社員のDX研修までをワンストップで提案させていただきます。この機会に是非お声かけください。</p>
-            </div>
-
-            <div class="mt-12 text-right text-gray-700">
-                <p class="font-bold text-lg">ウエストパーク社労士事務所</p>
-                <p class="font-bold text-lg">代表 野口 聡</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 代表プロフィール -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">代表プロフィール</h3>
-
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="md:w-1/3">
-                        <img src="images/noguchi-profile.png" alt="代表 野口 聡" class="w-full h-auto rounded-lg shadow-lg">
-                    </div>
-                    <div class="md:w-2/3">
-                        <h4 class="text-xl font-bold text-gray-800 mb-4">野口 聡（のぐち さとし）</h4>
-                        <div class="space-y-3 text-gray-700">
-                            <p class="font-medium text-primary">特定社会保険労務士</p>
-
-                            <div class="border-t pt-4 mt-4">
-                                <h5 class="font-bold mb-2">経歴</h5>
-                                <ul class="space-y-2">
-                                    <li>• 慶應義塾大学 卒業</li>
-                                    <li>• 金融機関勤務を経て独立</li>
-                                    <li>• 2015年 社会保険労務士登録</li>
-                                </ul>
-                            </div>
-
-                            <div class="border-t pt-4 mt-4">
-                                <h5 class="font-bold mb-2">専門分野</h5>
-                                <ul class="space-y-2">
-                                    <li>• DX推進支援</li>
-                                    <li>• 助成金申請代行</li>
-                                    <li>• 労務コンサルティング</li>
-                                </ul>
+                                <div class="border-t pt-4 mt-4">
+                                    <h5 class="font-bold mb-2">専門分野</h5>
+                                    <ul class="space-y-2">
+                                        <li>• DX推進支援</li>
+                                        <li>• 助成金申請代行</li>
+                                        <li>• 労務コンサルティング</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 事務所概要 -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">事務所概要</h3>
+        <!-- 事務所概要 -->
+        <section id="overview" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8">事務所概要</h3>
 
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <table class="w-full">
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700 w-1/3">事務所名</td>
-                            <td class="py-4 text-gray-700">ウエストパーク社労士事務所</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700">代表</td>
-                            <td class="py-4 text-gray-700">野口 聡<br><span class="text-sm text-gray-600">（特定社会保険労務士）</span></td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700">所在地</td>
-                            <td class="py-4 text-gray-700">〒810-0061<br>福岡市中央区西公園4-46-304</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700">受付時間</td>
-                            <td class="py-4 text-gray-700">平日 9:00〜17:00</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700">電話</td>
-                            <td class="py-4 text-gray-700"><a href="tel:080-3948-2324" class="text-secondary hover:underline">080-3948-2324</a></td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 font-bold text-gray-700">お問い合わせ</td>
-                            <td class="py-4 text-gray-700">メールにて24時間受付可能<br><a href="contact.html" class="text-secondary hover:underline">お問い合わせフォームはこちら</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <table class="w-full">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700 w-1/3">事務所名</td>
+                                <td class="py-4 text-gray-700">ウエストパーク社労士事務所</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700">代表</td>
+                                <td class="py-4 text-gray-700">野口 聡<br><span class="text-sm text-gray-600">（特定社会保険労務士）</span></td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700">所在地</td>
+                                <td class="py-4 text-gray-700">〒810-0061<br>福岡市中央区西公園4-46-304</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700">受付時間</td>
+                                <td class="py-4 text-gray-700">平日 9:00〜17:00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700">電話</td>
+                                <td class="py-4 text-gray-700"><a href="tel:080-3948-2324" class="text-secondary hover:underline">080-3948-2324</a></td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-gray-700">お問い合わせ</td>
+                                <td class="py-4 text-gray-700">メールにて24時間受付可能<br><a href="contact.html" class="text-secondary hover:underline">お問い合わせフォームはこちら</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA セクション -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-bold mb-4">まずはお気軽にご相談ください</h3>
-            <p class="mb-8">企業の課題をお聞かせください。最適なソリューションをご提案します。</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">お問い合わせフォーム</a>
-                <a href="tel:080-3948-2324" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition">📞 080-3948-2324</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-3">ウエストパーク社労士事務所</h3>
-                <p class="text-gray-300 text-sm mb-6 max-w-2xl mx-auto">福岡市中央区を拠点に、企業のDX推進と労務管理をサポートする社会保険労務士事務所です。</p>
-                <div class="border-t border-gray-700 pt-6">
+        <!-- フッター -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
                     <p class="text-sm text-gray-400">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
     <script>
-        // モバイルメニューの開閉
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // モバイルサイドバーの開閉
+        const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>

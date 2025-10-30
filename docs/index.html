@@ -21,172 +21,191 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- ヘッダー -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <h1 class="text-xl sm:text-2xl font-bold text-primary">ウエストパーク社労士事務所</h1>
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium">ホーム</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                    <a href="services.html" class="text-gray-700 hover:text-primary font-medium">業務内容</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-primary font-medium">料金案内</a>
-                    <a href="subsidies.html" class="text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                    <a href="contact.html" class="text-white bg-accent hover:bg-orange-600 px-4 py-2 rounded-md font-medium">お問い合わせ</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <!-- モバイルメニュー -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">ホーム</a>
-                <a href="about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">事務所案内</a>
-                <a href="services.html" class="block py-2 text-gray-700 hover:text-primary font-medium">業務内容</a>
-                <a href="pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">料金案内</a>
-                <a href="subsidies.html" class="block py-2 text-gray-700 hover:text-primary font-medium">助成金情報</a>
-                <a href="contact.html" class="block py-2 text-white bg-accent hover:bg-orange-600 px-4 rounded-md font-medium text-center mt-2">お問い合わせ</a>
-            </div>
-        </div>
-    </header>
+    <!-- モバイルメニューボタン（固定） -->
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
 
-    <!-- ヒーローセクション -->
-    <section class="relative bg-cover bg-center py-32" style="background-image: url('images/nishi-park-sakura.jpg');">
-        <!-- ダークオーバーレイ（下部のみ、グラデーション） -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-
-        <!-- コンテンツ -->
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-2xl max-w-4xl mx-auto">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-primary">福岡から企業の未来を支える</h2>
-                <p class="text-xl sm:text-2xl mb-8 text-gray-700">DX推進・助成金活用で、持続可能な経営をサポート</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">無料相談はこちら</a>
-                    <a href="services.html" class="bg-primary hover:bg-blue-900 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">サービス詳細</a>
-                </div>
-            </div>
+    <!-- サイドバー -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <!-- ロゴ -->
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-lg font-bold text-primary leading-tight">ウエストパーク<br>社労士事務所</h1>
         </div>
-    </section>
 
-    <!-- 事務所の特徴 -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">ウエストパーク社労士事務所の特徴</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-blue-50 rounded-lg">
-                    <div class="text-4xl mb-4">💼</div>
-                    <h3 class="text-xl font-bold text-primary mb-3">DX支援の専門家</h3>
-                    <p class="text-gray-600">勤怠管理や給与計算のデジタル化、オンライン手続きの推進など、最新のDX技術で業務効率化を実現します。</p>
-                </div>
-                <div class="text-center p-6 bg-blue-50 rounded-lg">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h3 class="text-xl font-bold text-primary mb-3">助成金活用のプロ</h3>
-                    <p class="text-gray-600">業務改善助成金や人材開発支援助成金など、企業に最適な助成金をご提案し、申請代行いたします。</p>
-                </div>
-                <div class="text-center p-6 bg-blue-50 rounded-lg">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold text-primary mb-3">伴走型のサポート</h3>
-                    <p class="text-gray-600">金融機関での経験とFP資格を活かし、経営課題に寄り添った実践的なアドバイスを提供します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- ナビゲーション -->
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">ホーム</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">事務所案内</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">業務内容</a></li>
+                <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金情報</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">お問い合わせ</a></li>
+            </ul>
+        </nav>
 
-    <!-- サービス概要 -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">主なサービス</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-bold text-primary mb-3">DXサポート</h3>
-                    <p class="text-gray-600 mb-4">勤怠管理・給与計算のデジタル化、労働・社会保険手続きのオンライン化など、業務効率化を支援します。</p>
-                    <a href="services.html#dx" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-bold text-primary mb-3">助成金申請サポート</h3>
-                    <p class="text-gray-600 mb-4">企業の課題をヒアリングし、利用可能な助成金をご提案。申請手続きを代行いたします。</p>
-                    <a href="services.html#subsidy" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-bold text-primary mb-3">労働・社会保険手続き</h3>
-                    <p class="text-gray-600 mb-4">採用・退職・給与支払いなど、複雑な手続きを一元的にサポートします。</p>
-                    <a href="services.html#procedures" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-bold text-primary mb-3">就業規則作成</h3>
-                    <p class="text-gray-600 mb-4">企業の理念や文化を反映した、オリジナルの就業規則・諸規程を作成します。</p>
-                    <a href="services.html#rules" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-bold text-primary mb-3">労務相談・顧問サービス</h3>
-                    <p class="text-gray-600 mb-4">日々の労務課題やトラブルをタイムリーに解決。伴走型でサポートします。</p>
-                    <a href="services.html#consulting" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-2 border-accent">
-                    <h3 class="text-xl font-bold text-accent mb-3">料金案内</h3>
-                    <p class="text-gray-600 mb-4">透明性の高い料金設定。企業規模に応じた柔軟なプランをご用意しています。</p>
-                    <a href="pricing.html" class="text-secondary hover:text-primary font-medium">詳しく見る →</a>
-                </div>
+        <!-- CTA -->
+        <div class="p-4 border-t border-gray-200">
+            <div class="bg-accent/10 border-2 border-accent p-4 rounded-lg mb-4">
+                <p class="text-sm text-gray-600 mb-2 text-center">お気軽にご相談ください</p>
+                <a href="tel:080-3948-2324" class="block text-center bg-accent hover:bg-orange-600 text-white px-4 py-3 rounded-md font-bold transition">
+                    📞 080-3948-2324
+                </a>
+                <p class="text-xs text-gray-600 text-center mt-2">平日 9:00〜17:00</p>
             </div>
+            <a href="contact.html" class="block text-center bg-primary hover:bg-blue-900 text-white px-4 py-2 rounded-md font-medium transition">
+                お問い合わせフォーム
+            </a>
         </div>
-    </section>
 
-    <!-- CTA セクション -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">まずはお気軽にご相談ください</h2>
-            <p class="text-xl mb-8">DX推進、助成金活用、労務管理など、企業の課題をお聞かせください。<br>経験豊富な社労士が、最適なソリューションをご提案します。</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">お問い合わせフォーム</a>
-                <a href="tel:080-3948-2324" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-md font-bold text-lg transition">📞 080-3948-2324</a>
-            </div>
-            <p class="mt-6 text-sm">受付時間：平日 9:00〜17:00 / メール：24時間受付</p>
+        <!-- ページ内目次（ホームページ用） -->
+        <div class="p-4 border-t border-gray-200">
+            <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
+            <ul class="space-y-1 text-sm">
+                <li><a href="#features" class="block px-2 py-1 text-gray-600 hover:text-primary transition">事務所の特徴</a></li>
+                <li><a href="#services" class="block px-2 py-1 text-gray-600 hover:text-primary transition">主なサービス</a></li>
+                <li><a href="#why-choose" class="block px-2 py-1 text-gray-600 hover:text-primary transition">選ばれる理由</a></li>
+            </ul>
         </div>
-    </section>
+    </aside>
 
-    <!-- フッター -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 mb-6">
-                <div>
-                    <h3 class="text-lg font-bold mb-3">ウエストパーク社労士事務所</h3>
-                    <p class="text-gray-300 text-sm">福岡市中央区を拠点に、企業のDX推進と労務管理をサポートする社会保険労務士事務所です。</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-3">お問い合わせ</h3>
-                    <p class="text-gray-300 text-sm">〒810-0061<br>福岡市中央区西公園4-46-304</p>
-                    <p class="text-gray-300 text-sm mt-2">TEL: 080-3948-2324<br>平日 9:00〜17:00</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-3">リンク</h3>
-                    <ul class="text-gray-300 text-sm space-y-1">
-                        <li><a href="index.html" class="hover:text-white">ホーム</a></li>
-                        <li><a href="about.html" class="hover:text-white">事務所案内</a></li>
-                        <li><a href="services.html" class="hover:text-white">業務内容</a></li>
-                        <li><a href="pricing.html" class="hover:text-white">料金案内</a></li>
-                        <li><a href="subsidies.html" class="hover:text-white">助成金情報</a></li>
-                        <li><a href="contact.html" class="hover:text-white">お問い合わせ</a></li>
-                    </ul>
+    <!-- オーバーレイ（モバイル時） -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="lg:ml-64">
+        <!-- ヒーローセクション -->
+        <section class="relative bg-cover bg-center h-96" style="background-image: url('images/nishi-park-sakura.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+            <div class="relative h-full flex items-center justify-center px-4">
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-primary">福岡から企業の未来を支える</h2>
+                    <p class="text-lg sm:text-xl text-gray-700">DX推進・助成金活用で、持続可能な経営をサポート</p>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-                <p>&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
-                <p class="mt-2 text-xs">写真提供：福岡県観光連盟</p>
+        </section>
+
+        <!-- 事務所の特徴 -->
+        <section id="features" class="py-16 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">事務所の特徴</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="text-4xl mb-4">💼</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">DX支援の専門家</h3>
+                        <p class="text-gray-600">勤怠管理や給与計算のデジタル化、オンライン手続きの推進など、最新のDX技術で業務効率化を実現します。</p>
+                    </div>
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="text-4xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">助成金活用のプロ</h3>
+                        <p class="text-gray-600">業務改善助成金や人材開発支援助成金など、企業に最適な助成金をご提案し、申請代行いたします。</p>
+                    </div>
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">伴走型のサポート</h3>
+                        <p class="text-gray-600">企業の課題に寄り添った実践的なアドバイスを提供します。</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- 主なサービス -->
+        <section id="services" class="py-16 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">主なサービス</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <a href="services.html#dx" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold text-primary mb-2">DXサポート</h3>
+                        <p class="text-gray-600 text-sm">勤怠・給与システム導入、電子申請、業務効率化支援</p>
+                    </a>
+                    <a href="subsidies.html" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold text-primary mb-2">助成金申請代行</h3>
+                        <p class="text-gray-600 text-sm">業務改善助成金、人材開発支援助成金の申請サポート</p>
+                    </a>
+                    <a href="services.html#procedures" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold text-primary mb-2">労働・社会保険手続き</h3>
+                        <p class="text-gray-600 text-sm">入退社手続き、給付金申請、労災申請など</p>
+                    </a>
+                    <a href="services.html#consulting" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold text-primary mb-2">労務相談・顧問契約</h3>
+                        <p class="text-gray-600 text-sm">人事労務のあらゆるご相談に対応</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 選ばれる理由 -->
+        <section id="why-choose" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">選ばれる理由</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">少子化時代のDX推進に特化</h3>
+                            <p class="text-gray-600">人材不足を補うデジタル化支援で、企業の生産性向上を実現します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">助成金活用でコスト削減</h3>
+                            <p class="text-gray-600">DX導入費用を助成金で軽減。機器導入から研修まで、ワンストップで提案します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">地域密着のサポート</h3>
+                            <p class="text-gray-600">福岡市中央区を拠点に、県内全域、オンラインでは全国対応可能です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="text-sm text-gray-400">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+                    <p class="text-xs text-gray-500 mt-2">写真提供：福岡県観光連盟</p>
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script>
-        // モバイルメニューの開閉
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // モバイルサイドバーの開閉
+        const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
