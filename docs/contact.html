@@ -58,19 +58,11 @@
                 <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">業務内容</a></li>
                 <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
                 <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金情報</a></li>
+                <li><a href="faq.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">よくある質問</a></li>
                 <li><a href="contact.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">お問い合わせ</a></li>
             </ul>
         </nav>
 
-        <!-- ページ内目次 -->
-        <div class="p-4 border-t border-gray-200">
-            <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
-            <ul class="space-y-1 text-sm">
-                <li><a href="#form" class="block px-2 py-1 text-gray-600 hover:text-primary transition">お問い合わせフォーム</a></li>
-                <li><a href="#info" class="block px-2 py-1 text-gray-600 hover:text-primary transition">事務所情報</a></li>
-                <li><a href="#faq" class="block px-2 py-1 text-gray-600 hover:text-primary transition">よくある質問</a></li>
-            </ul>
-        </div>
     </aside>
 
     <!-- オーバーレイ（モバイル時） -->
@@ -88,144 +80,70 @@
 
         <!-- コンテンツ -->
         <section class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- お問い合わせフォーム -->
-                    <div id="form">
-                        <h3 class="text-2xl font-bold text-primary mb-6">お問い合わせフォーム</h3>
-                        <p class="text-gray-700 mb-6">下記フォームに必要事項をご記入の上、送信してください。<br>通常2営業日以内にご返信いたします。</p>
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="form">
+                    <h3 class="text-2xl font-bold text-primary mb-6">お問い合わせフォーム</h3>
+                    <p class="text-gray-700 mb-6">下記フォームに必要事項をご記入の上、送信してください。<br>通常2営業日以内にご返信いたします。</p>
 
-                        <form id="contact-form" class="space-y-6">
-                            <div>
-                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">会社名 <span class="text-red-500">*</span></label>
-                                <input type="text" id="company" name="company" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">お名前 <span class="text-red-500">*</span></label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">メールアドレス <span class="text-red-500">*</span></label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">電話番号</label>
-                                <input type="tel" id="phone" name="phone"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-
-                            <div>
-                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">ご相談内容 <span class="text-red-500">*</span></label>
-                                <select id="service" name="service" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                                    <option value="">選択してください</option>
-                                    <option value="dx">DXサポートについて</option>
-                                    <option value="subsidy">助成金申請について</option>
-                                    <option value="procedures">労働・社会保険手続きについて</option>
-                                    <option value="rules">就業規則作成について</option>
-                                    <option value="consulting">労務相談・顧問契約について</option>
-                                    <option value="pricing">料金・お見積りについて</option>
-                                    <option value="other">その他</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
-                                <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                            </div>
-
-                            <div>
-                                <button type="submit" id="submit-button"
-                                    class="w-full bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">
-                                    送信する
-                                </button>
-                            </div>
-
-                            <p class="text-sm text-gray-600">
-                                <span class="text-red-500">*</span> は必須項目です
-                            </p>
-                        </form>
-
-                        <div id="form-message" class="mt-6 hidden"></div>
-                    </div>
-
-                    <!-- 事務所情報 -->
-                    <div id="info">
-                        <h3 class="text-2xl font-bold text-primary mb-6">事務所情報</h3>
-
-                        <!-- 基本情報 -->
-                        <div class="bg-gray-50 p-6 rounded-lg mb-6">
-                            <h4 class="font-bold text-lg text-gray-800 mb-4">ウエストパーク社労士事務所</h4>
-
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-start">
-                                    <div class="text-xl mr-3">📍</div>
-                                    <div>
-                                        <p class="text-gray-600">〒810-0061<br>福岡市中央区西公園4-46-304</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start">
-                                    <div class="text-xl mr-3">📧</div>
-                                    <div>
-                                        <p class="text-gray-600">メール：<a href="mailto:westpark-sr@gmail.com" class="text-secondary hover:underline">westpark-sr@gmail.com</a></p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start">
-                                    <div class="text-xl mr-3">📞</div>
-                                    <div>
-                                        <p class="text-gray-600">電話：080-3948-2324</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">会社名 <span class="text-red-500">*</span></label>
+                            <input type="text" id="company" name="company" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
 
-                        <!-- 代表情報 -->
-                        <div class="bg-blue-50 border-l-4 border-primary p-6 rounded">
-                            <h4 class="font-bold text-gray-800 mb-2">代表</h4>
-                            <p class="text-gray-700 font-medium">野口 聡（のぐち さとる）</p>
-                            <p class="text-sm text-gray-600 mt-2">
-                                特定社会保険労務士
-                            </p>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">お名前 <span class="text-red-500">*</span></label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- よくある質問 -->
-        <section id="faq" class="py-16 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-primary mb-8 text-center">よくある質問</h3>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">メールアドレス <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-gray-800 mb-2">Q. 相談は無料ですか？</h4>
-                        <p class="text-gray-700">A. はい、初回相談は無料です。お気軽にお問い合わせください。</p>
-                    </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">電話番号</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-gray-800 mb-2">Q. 対応エリアはどこですか？</h4>
-                        <p class="text-gray-700">A. 福岡市中央区を拠点としていますが、福岡県内全域、オンラインでは全国対応可能です。</p>
-                    </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">ご相談内容 <span class="text-red-500">*</span></label>
+                            <select id="service" name="service" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">選択してください</option>
+                                <option value="dx">DXサポートについて</option>
+                                <option value="subsidy">助成金申請について</option>
+                                <option value="procedures">労働・社会保険手続きについて</option>
+                                <option value="rules">就業規則作成について</option>
+                                <option value="consulting">労務相談・顧問契約について</option>
+                                <option value="pricing">料金・お見積りについて</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-gray-800 mb-2">Q. 小規模事業者でも相談できますか？</h4>
-                        <p class="text-gray-700">A. はい、従業員数に関わらず、どのような規模の企業様でもご相談いただけます。</p>
-                    </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">お問い合わせ内容 <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-gray-800 mb-2">Q. 助成金は必ず受給できますか？</h4>
-                        <p class="text-gray-700">A. 要件を満たせば受給可能ですが、審査があります。当事務所では豊富な経験を活かし、受給の可能性を最大限に高めるサポートをいたします。</p>
-                    </div>
+                        <div>
+                            <button type="submit" id="submit-button"
+                                class="w-full bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold text-lg transition">
+                                送信する
+                            </button>
+                        </div>
+
+                        <p class="text-sm text-gray-600">
+                            <span class="text-red-500">*</span> は必須項目です
+                        </p>
+                    </form>
+
+                    <div id="form-message" class="mt-6 hidden"></div>
                 </div>
             </div>
         </section>
