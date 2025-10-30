@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウエストパーク社労士事務所 | 福岡のDX特化労務サポート</title>
+    <meta name="description" content="福岡市中央区の社労士事務所。DX推進・助成金申請・労務管理を専門とし、企業のデジタル化と人材活用を総合サポート。">
+    <meta name="keywords" content="社労士,福岡,DX,助成金,労務管理,西公園,デジタルトランスフォーメーション">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --retro-blue: #000080;
+            --retro-yellow: #ffff00;
+            --retro-red: #ff6347;
+            --modern-blue: #1e40af;
+            --modern-gray: #64748b;
+            --accent-orange: #f59e0b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', 'Arial', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header - Semi-retro with modern touches */
+        header {
+            background: linear-gradient(135deg, var(--retro-blue), var(--modern-blue));
+            color: var(--white);
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--retro-yellow);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            background: var(--retro-red);
+            border-color: var(--retro-red);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: rgba(255,255,255,0.2);
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .mobile-menu span {
+            width: 22px;
+            height: 3px;
+            background: var(--white);
+            margin: 2px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section - Retro gradient with modern typography */
+        .hero {
+            background: linear-gradient(135deg, var(--retro-blue) 0%, #4169e1 50%, #00bfff 100%);
+            color: var(--white);
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--retro-yellow) !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+            color: var(--white) !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-orange), #ea580c);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+            border-color: var(--retro-yellow);
+        }
+        
+        /* Sections - Modern spacing with retro colors */
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 90px;
+        }
+        
+        section:nth-child(even) {
+            background: var(--light-bg);
+        }
+        
+        h2 {
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--retro-blue);
+            font-weight: 700;
+            position: relative;
+        }
+        
+        h2 i {
+            margin-right: 12px;
+            color: var(--retro-red);
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--retro-red), var(--retro-yellow));
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: var(--retro-blue);
+            margin: 28px 0 16px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--retro-yellow);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        h3 i {
+            margin-right: 8px;
+            color: var(--retro-red);
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: var(--modern-blue);
+            margin: 20px 0 12px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        /* Service Cards - Retro borders with modern shadows */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 50px 0;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 28px;
+            border: 2px solid var(--retro-blue);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--retro-red), var(--retro-yellow));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color: var(--retro-red);
+        }
+        
+        .service-card h3 {
+            color: var(--retro-blue);
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .service-card ul {
+            margin: 16px 0;
+            padding-left: 0;
+        }
+        
+        .service-card li {
+            margin-bottom: 12px;
+            padding: 8px 0;
+            list-style: none;
+            position: relative;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .service-card li::before {
+            content: '';
+        }
+        
+        /* Pricing Table - Hybrid style */
+        .pricing-table {
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+        
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--retro-blue), var(--modern-blue));
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        td {
+            background: var(--white);
+            transition: background 0.2s ease;
+        }
+        
+        tr:hover td {
+            background: var(--light-bg);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .office-info {
+            background: var(--white);
+            padding: 32px;
+            border: 2px solid var(--retro-blue);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .office-info h3 {
+            margin-bottom: 24px;
+            color: var(--retro-blue);
+            border-bottom: 3px solid var(--retro-yellow);
+            padding-bottom: 8px;
+        }
+        
+        .info-item {
+            margin-bottom: 16px;
+            padding: 12px;
+            background: var(--light-bg);
+            border-radius: 6px;
+            border-left: 4px solid var(--retro-red);
+        }
+        
+        .info-item strong {
+            display: block;
+            color: var(--retro-blue);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        
+        /* Contact Form - Modern functionality with retro aesthetics */
+        .contact-form {
+            background: var(--white);
+            padding: 32px;
+            border: 2px solid var(--retro-blue);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 24px;
+            color: var(--retro-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--retro-blue);
+            font-size: 0.95rem;
+        }
+        
+        label i {
+            margin-right: 6px;
+            color: var(--retro-red);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--retro-blue);
+            box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1);
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--retro-red), #dc143c);
+            color: var(--white);
+            padding: 16px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 99, 71, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 99, 71, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Phone Link */
+        .phone-link {
+            color: var(--retro-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-link:hover {
+            color: var(--retro-red);
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--retro-blue), var(--modern-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 32px 0;
+            border-top: 4px solid var(--retro-yellow);
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--retro-blue);
+                flex-direction: column;
+                padding: 20px;
+                gap: 12px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                text-align: center;
+                padding: 12px;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+            }
+        }
+        
+        /* Utility Classes */
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 32px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            border: 2px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 28px 0;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+        }
+        
+        .highlight-box ul {
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        
+        .highlight-box li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .highlight-box li::before {
+            content: '';
+        }
+        
+        /* Modern List Styling */
+        ul {
+            margin: 16px 0;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+        }
+        
+        li::before {
+            content: '';
+        }
+        
+        /* Classic HR with modern twist */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, var(--retro-blue), var(--retro-red), var(--retro-yellow));
+            margin: 40px 0;
+            border-radius: 1px;
+        }
+        
+        /* Retro blink effect (subtle) */
+        .blink {
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 70% { opacity: 1; }
+            71%, 100% { opacity: 0.7; }
+        }
+        
+        /* Strong text styling */
+        strong {
+            color: var(--retro-red);
+            font-weight: 600;
+        }
+        
+        /* Link improvements */
+        a {
+            color: var(--retro-blue);
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--retro-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-landmark"></i>
+ウエストパーク社労士事務所
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home"><i class="fas fa-home"></i> ホーム</a></li>
+                <li><a href="#about"><i class="fas fa-user-tie"></i> 事務所について</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> サービス</a></li>
+                <li><a href="#pricing"><i class="fas fa-yen-sign"></i> 料金</a></li>
+                <li><a href="#subsidies"><i class="fas fa-chart-line"></i> 助成金</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>DX×労務で福岡の企業を支える</h1>
+                <p>デジタルトランスフォーメーションと労務管理の専門性で<br>持続可能な企業経営をサポート</p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-phone blink"></i> 無料相談はこちら
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2><i class="fas fa-user-tie"></i> 代表挨拶・事務所概要</h2>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <p>福岡市中央区西公園にて「ウエストパーク社労士事務所」を代表しております、<strong>特定社会保険労務士の野口 聡</strong>です。銀行員として企業の資金運用を支えた経験とファイナンシャルプランナーの専門知識を活かし、他の社労士事務所にはない独自の視点とサービスで皆さまの企業運営をサポートしております。</p>
+                </div>
+                
+                <p>私たちの強みは、単なる労務管理や助成金申請だけにとどまらず、各業界の事情に深く特化した<strong>業務特化型DX支援</strong>ができることです。これにより、企業様の業務効率化や制度運用の最適化をデジタル技術で実現し、人的資源を最大限に活用した未来型の経営基盤づくりをお手伝いしています。</p>
+                
+                <p>また、若い世代からシニア層まで、性別や背景を問わず多様な働き手が共に働く環境づくりにも特にこだわっています。多様性を尊重した労務サポートを通じて、どのような環境にも柔軟にフィットし、全ての従業員が安心して能力を発揮できる職場づくりを推進しています。</p>
+                
+                <div class="office-info">
+                    <h3><i class="fas fa-building"></i> 事務所概要</h3>
+                    <div class="info-item">
+                        <strong><i class="fas fa-building"></i> 事務所名</strong>
+                        ウエストパーク社労士事務所
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-user"></i> 代表</strong>
+                        野口 聡（特定社会保険労務士／ファイナンシャルプランナー）
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-map-marker-alt"></i> 所在地</strong>
+                        〒810-0061 福岡市中央区西公園4-46-304
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-clock"></i> 受付時間</strong>
+                        平日 9:00〜17:00
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-envelope"></i> お問い合わせ</strong>
+                        メールにて24時間受付可能
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2><i class="fas fa-cogs"></i> サービス概要</h2>
+            <div class="section-content">
+                <p class="text-center mb-2">ウエストパーク社労士事務所は、単なる労務管理にとどまらず、企業の持続的な成長と働く人の幸福を両立させるために、多面的なサービスを展開しています。特に、最新のデジタルトランスフォーメーション（DX）技術を駆使した業務効率化支援と、経験豊富なファイナンシャルプランナーによる資金計画支援を強みとしています。</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3><i class="fas fa-laptop-code"></i> DXサポート</h3>
+                        <p>ITと労務の専門知識を併せ持つDXサポートチームが常駐し、各産業や企業に合わせた最適なデジタル化計画を設計・実装します。</p>
+                        <ul>
+                            <li><strong>勤怠管理のデジタル化</strong><br>クラウド型勤怠システムを導入・運用</li>
+                            <li><strong>労働・社会保険手続きのオンライン化</strong><br>迅速で正確な処理とペーパーレス化</li>
+                            <li><strong>就業規則などの電子管理</strong><br>改定履歴管理や従業員周知をデジタル化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-invoice-dollar"></i> 助成金申請サポート</h3>
+                        <p>企業の経営環境や課題を詳細にヒアリングし、利用可能な助成金を的確にご提案。申請手続きは当事務所が代行し、申請漏れやエラーを防止します。</p>
+                        <ul>
+                            <li><strong>業務改善助成金</strong><br>企業の生産性向上を図る設備投資や仕組みづくりを支援</li>
+                            <li><strong>人材開発支援助成金</strong><br>従業員のスキルアップや教育訓練を後押し</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-clipboard-list"></i> 労働・社会保険手続き代行</h3>
+                        <p>採用・退職・給与支払い・社会保険加入など、従業員の入れ替わりに伴う複雑な手続きを一元的にサポート。豊富な専門知識とDXツールをフル活用します。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-contract"></i> オーダーメイド就業規則・諸規程の作成</h3>
+                        <p>企業の理念や文化、経営方針を反映したオリジナルの就業規則と諸規程を作成。「企業の想いを従業員に伝える生きたドキュメント」として活用いただけます。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-handshake"></i> 労務相談・顧問サービス</h3>
+                        <p>経営者や人事担当者の皆様の日々の労務課題やトラブルをタイムリーに解決。豊富な経験に基づいた実践的なアドバイスを伴走型でご提供します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2><i class="fas fa-yen-sign"></i> 料金案内</h2>
+            <div class="section-content">
+                <p class="text-center mb-2">ウエストパーク社労士事務所の料金体系はお客様のニーズに合わせた柔軟なプランをご用意しております。透明性の高い料金設定で、安心してご依頼いただけます。</p>
+                
+                <h3><i class="fas fa-file-invoice-dollar"></i> 助成金申請サポート</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>着手金：無料</strong></li>
+                        <li><strong>申請代行報酬</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>総合顧問契約のお客様：助成金受給額の15%</li>
+                                <li>相談顧問契約のお客様：助成金受給額の20%</li>
+                                <li>顧問契約なしの単独依頼の場合：助成金受給額の30%</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <h3><i class="fas fa-handshake"></i> 顧問契約プラン</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-tags"></i> プラン名</th>
+                                <th><i class="fas fa-yen-sign"></i> 基本契約料（月額・税込）</th>
+                                <th><i class="fas fa-calculator"></i> 手続業務料（月額・税込）</th>
+                                <th><i class="fas fa-list-ul"></i> 内容概要</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>① 総合顧問</strong></td>
+                                <td><strong>22,000円～</strong>（4名まで）</td>
+                                <td><strong>5,500円～</strong>（5名以上は5名単位で加算）</td>
+                                <td>労働保険・社会保険等の各種手続き全般を含む総合支援。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>② 相談顧問</strong></td>
+                                <td><strong>10,000円～</strong>（4名まで）</td>
+                                <td><strong>2,750円～</strong>（5名以上は5名単位で加算）</td>
+                                <td>労働問題に関するご相談・アドバイスを中心に対応。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><small><i class="fas fa-info-circle"></i> ※社員数は「給与計算対象人数」を基準とします。<br>
+                ※毎年、労働保険料の更新・社会保険料の算定基礎届の時期に別途月額顧問料1ヶ月分を申し受けます。<br>
+                ※契約更新時に社員数の増減に伴う顧問料の見直しを行います。</small></p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Subsidies Section -->
+    <section id="subsidies">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> DXサポート特化型の助成金</h2>
+            <div class="section-content">
+                <p>ウエストパーク社労士事務所は、中小企業の助成金申請代行を中心に、特にDX推進に関連する助成金のご提案と申請支援を専門に行っています。助成金は、厚生労働省が所管する「事業主のための雇用関係助成金」が代表的で、主に雇用機会の拡大や労働者の能力開発に対して支給される返済不要の公的資金です。</p>
+                
+                <h3><i class="fas fa-star"></i> 助成金活用のメリット</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>要件を満たせば必ず受給可能</strong></li>
+                        <li><strong>雇用や従業員のニーズにマッチした制度設計</strong></li>
+                        <li><strong>返済不要で資金使途に制限がない</strong></li>
+                    </ul>
+                </div>
+                
+                <h3><i class="fas fa-shield-alt"></i> 助成金申請代行の特徴</h3>
+                <ul>
+                    <li><strong>相談無料・着手金ゼロ</strong></li>
+                    <li><strong>代行報酬は助成金額の20%（顧問契約の場合は割引あり）</strong></li>
+                    <li><strong>受給リスクゼロの安心サポート</strong></li>
+                    <li><strong>助成金受給後に報酬請求（前金なし）</strong></li>
+                </ul>
+                
+                <h3><i class="fas fa-list-alt"></i> 取り扱い助成金一覧</h3>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4><i class="fas fa-industry"></i> 業務改善助成金</h4>
+                        <p>企業の業務生産性向上を目的とした設備投資やシステム導入に加え、事業場内最低賃金を一定額以上引き上げた場合に、その経費の一部を助成します。この助成金は、DXツールやIT機器の導入など生産性革新に直接結びつく投資に活用され、多くの中小企業が利用可能なものです。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4><i class="fas fa-graduation-cap"></i> 人材開発支援助成金</h4>
+                        <p>従業員の能力開発や教育訓練に対する助成金で、以下のような施策が対象となります。</p>
+                        <ul>
+                            <li>新入社員研修やスキルアップ講座の実施</li>
+                            <li>ITやDX推進に必要な知識・技術の習得支援</li>
+                            <li>eラーニング導入など教育環境の整備</li>
+                        </ul>
+                        <p>人材の成長を促すことで企業競争力を高め、将来的なDX実現の基盤強化にもつながります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> お問い合わせ</h2>
+            
+            <div class="contact-container">
+                <div class="office-info">
+                    <h3><i class="fas fa-building"></i> 事務所情報</h3>
+                    <div class="info-item">
+                        <strong><i class="fas fa-building"></i> 事務所名</strong>
+                        ウエストパーク社労士事務所
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-user"></i> 代表</strong>
+                        野口 聡（特定社会保険労務士／ファイナンシャルプランナー）
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-map-marker-alt"></i> 所在地</strong>
+                        〒810-0061 福岡市中央区西公園4-46-304
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-phone"></i> 電話</strong>
+                        <a href="tel:070-3618-8080" class="phone-link">
+                            <i class="fas fa-phone blink"></i> 070-3618-8080
+                        </a>
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-clock"></i> 受付時間</strong>
+                        平日 9:00〜17:00
+                    </div>
+                    <div class="info-item">
+                        <strong><i class="fas fa-envelope"></i> メール対応</strong>
+                        24時間受付可能
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <h3><i class="fas fa-paper-plane"></i> 無料相談お申し込み</h3>
+                    
+                    <div class="form-group">
+                        <label for="company"><i class="fas fa-building"></i> 会社名 *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> お名前 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> メールアドレス *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> 電話番号</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service"><i class="fas fa-list"></i> ご相談内容 *</label>
+                        <select id="service" name="service" required>
+                            <option value="">選択してください</option>
+                            <option value="dx-support">DXサポート</option>
+                            <option value="subsidies">助成金申請</option>
+                            <option value="labor-procedures">労働・社会保険手続き</option>
+                            <option value="employment-rules">就業規則作成</option>
+                            <option value="consulting">労務相談・顧問</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> 詳細・ご質問</label>
+                        <textarea id="message" name="message" placeholder="具体的なご相談内容をお聞かせください"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> 無料相談を申し込む
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-copyright"></i> 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+            <p class="blink"><i class="fas fa-heart"></i> DX×労務で福岡の企業を支える</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // EmailJS configuration
+        emailjs.init("YOUR_EMAILJS_USER_ID"); // Replace with actual EmailJS user ID
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+            submitBtn.disabled = true;
+            
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('✅ お問い合わせを送信しました。24時間以内にご連絡いたします。');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('❌ 送信に失敗しました。お電話でお問い合わせください。');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger menu
+            const spans = mobileMenu.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const spans = mobileMenu.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+    </script>
+    
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
